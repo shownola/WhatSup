@@ -1,3 +1,5 @@
+
+
 @import "bootstrap";
 
 .container {
@@ -34,6 +36,7 @@
   height: 540px;
   background-color: #333;
   // background-image: url('veggies2.jpg');
+  
   // border: 15px solid black;
   border-radius: 21px;
   -webkit-transform: rotate(30deg);
@@ -58,7 +61,7 @@
   left: 5%;
   background-color: #e5e5e5;
 }
-img {
+.img-responsive {
   height: 100%;
   width: 100%;
 }
@@ -66,6 +69,7 @@ img {
   border: 10px solid black;
 }
 .img-1-phone {
+ 
   border: 7px solid black;
   border-top: 30px solid black;
   
@@ -101,4 +105,40 @@ img {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+.directions {
+  margin-top: 0px;
+}
+// .card a {
+//   color: ;
+// }
+.site-header {
+  background-color: #007BFF;
+}
+
+// .br-text {
+//   color: #D79922;
+// }
+// .lt-text {
+//   color: #F13C20;
+// }
+
+// #4056A1
+
+// F13C20
+
+.rounded-circle {
+  border-radius: 50%;
+}
+// .chef_info {
+//   border-radius: 50%;
+// }
+.gravatar {
+  border-radius: 50%;
+}
+.btn-lg:hover {
+  background-color: #8860D0;
+}
+.card .bg-danger {
+  background-color: #D83F87!important;
 }
