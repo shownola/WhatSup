@@ -16,7 +16,29 @@
       <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
       <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
       <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-      <%= link_to 'Sign up', signup_path, class: 'py-2 d-none d-md-inline-block' %>
+      
+      <% if logged_in? %>
+      
+     
+      
+     
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_chef.chefname.titleize %>'s Profile <%= 'Admin' if current_chef.admin?%>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li class="dropdown-item-text"><%= link_to 'View Profile', chef_path(current_chef) %></li>
+            <li class="dropdown-item-text"><%= link_to 'Edit Profile', edit_chef_path(current_chef) %></li>
+            <li class="dropdown-item-text"><%= link_to 'Log out', logout_path, method: :delete, class: 'py-2 d-none d-md-inline-block' %></li>
+          </div>
+        </div>
+        
+      <% else %>
+          <%= link_to 'Sign up', signup_path, class: 'py-2 d-none d-md-inline-block' %>
+         <%= link_to 'Log in', login_path, class: 'py-2 d-none d-md-inline-block' %>
+      <% end %>
+     
+      
       
     </div>
   </nav>
