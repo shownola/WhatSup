@@ -62,6 +62,5 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 gem 'will_paginate', '3.1.0'
-
-
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
+gem 'cocoon'

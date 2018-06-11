@@ -13,9 +13,13 @@
       <!--<a class="py-2 d-none d-md-inline-block" href="#">Recipes</a>-->
       <!--<a class="py-2 d-none d-md-inline-block" href="#">Create Recipe</a>-->
       <!--<a class="py-2 d-none d-md-inline-block" href="#">Features</a>-->
-      <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-      <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
+      <!--<a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>-->
+      <!--<a class="py-2 d-none d-md-inline-block" href="#">Support</a>-->
       <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
+      <%= link_to 'Ingredients', ingredients_path, class: "py-2 d-none d-md-inline-block" %>
+      <%= link_to 'New Ingredient', new_ingredient_path, class: "py-2 d-none d-md-inline-block" %>
+      
+      
       
       <% if logged_in? %>
       

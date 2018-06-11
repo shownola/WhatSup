@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   
   def new
     @recipe = Recipe.new
+    @recipe.recipe_ingredients.build
   end
   
   def create
@@ -27,7 +28,7 @@ class RecipesController < ApplicationController
   end
   
   def edit
-   
+   @recipe.recipe_ingredients.build
   end
   
   def update
@@ -53,7 +54,8 @@ class RecipesController < ApplicationController
      end
   
     def recipe_params
-      params.require(:recipe).permit(:name, :directions)
+      params.require(:recipe).permit(:name, :directions, :ingredient_ids[], ingredients_attributes: Ingredient.attribute_names.map(&:to_sym).push(:_destroy))
+      # params.require(:recipe).permit(:name, :directions, recipe_ingredients_attributes: Ingredient.attribute_names.map(&:to_sym).push(:_destroy))
     end
     
     def require_same_user
@@ -67,3 +69,6 @@ class RecipesController < ApplicationController
   
 end
 
+# params.require(:todo_list).permit(:name, tasks_attributes: [:id, :_destroy,:todo_list_id,:name,:completed,:due])
+# params.require(:todo_list).permit(:name, tasks_attributes: Task.attribute_names.map(&:to_sym).push(:_destroy))
+ 

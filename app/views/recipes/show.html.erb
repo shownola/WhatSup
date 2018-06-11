@@ -11,6 +11,14 @@
   <hr />
   <%= simple_format(@recipe.directions) %>
   <hr />
+  
+   
+   <% if @recipe.ingredients.any? %>
+     <div class="justify-content-left">
+       <p>Ingredients: <%= render @recipe.ingredients %></p>
+     </div>
+   <% end %>
+  
   <div class='text-right'>
     <p class="center">
       <em>Created by: </em>
@@ -18,10 +26,9 @@
     </p>
     
     <p class="center rounded-circle">
-      
-      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
-     
+      <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
     </p>
+    
     <p class="center">
       <small><%= @recipe.chef.chefname.capitalize %></small>
       <div class="text-right"><em>created: <%= time_ago_in_words(@recipe.created_at) %></em></div>
@@ -39,7 +46,9 @@
 
 
 
-
+ <!--<% Ingredient.all.each do |ingredient| %>-->
+      <!--  <%= link_to ingredient.name, ingredient_path(ingredient) %>-->
+      <!--<% end %>-->
 
 
 
