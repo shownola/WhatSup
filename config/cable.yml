@@ -7,6 +7,9 @@ test:
 production:
   adapter: redis
   url: <%= ENV["REDIS_URL"] %>
-  channel_prefix: WhatSup_production
+  
+  # channel_prefix: shownola-what-sup_production
+  
+  # channel_prefix: WhatSup_production
   
   # url: redis://localhost:6379/1
