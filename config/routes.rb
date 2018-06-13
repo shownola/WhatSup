@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   
   mount ActionCable.server => '/cable'
   
+  get '/chat', to: 'chatrooms#show'
+  resources :messages, only: [:create]
+  
   # get '/recipes', to: 'recipes#index'
   # get '/recipes/new', to: 'recipes#new', as: 'new_recipe'
   # get '/recipes/:id', to: 'recipes#show', as: 'recipe'

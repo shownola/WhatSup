@@ -55,7 +55,7 @@ class RecipesController < ApplicationController
      end
   
     def recipe_params
-      params.require(:recipe).permit(:name, :directions, :ingredient_ids[], ingredients_attributes: Ingredient.attribute_names.map(&:to_sym).push(:_destroy))
+      params.require(:recipe).permit(:name, :directions, ingredients_attributes: Ingredient.attribute_names.map(&:to_sym).push(:_destroy))
       # params.require(:recipe).permit(:name, :directions, recipe_ingredients_attributes: Ingredient.attribute_names.map(&:to_sym).push(:_destroy))
     end
     

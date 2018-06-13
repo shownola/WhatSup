@@ -1,42 +1,89 @@
 <%= render 'shared/errors', obj: @recipe %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="form-group">
-        <%= form_for @recipe do |f| %>
-        <div class="field">
-          <%= f.label :name %><br/>
-          <%= f.text_field :name, class: 'form-control' %>
-          
-           <div class="field">
-            <%= f.label :directions %><br/>
-            <%= f.text_area :directions, rows: 6, class: 'form-control'%>
-          </div>
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= form_for @recipe do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div> 
+    </div> 
+  </div>
+
+<hr />
   
-          <h3>Ingredients</h3>
-          <div id='ingredients'>
-            <%= f.fields_for :ingredients do |ingredient| %>
-              <%= render 'ingredient_fields', :f => ingredient %>
-            <% end %>
-            <div class='links'>
-              <%= link_to_add_association 'add ingredient', f, :ingredients %>
-            </div>
-          </div>
-          
-          <%= f.submit 'Save', class: 'btn btn-primary' %>
-        <% end %>
+  <div class="card">  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :directions %>
+          <%= f.text_area :directions, rows: 6, class: 'form-control' %>
         </div>
-        
-        <div class="col-md-10 col-md-offset-4 text-center">
-        [ <%= link_to 'Cancel and Return to Recipes Listing', recipes_path %> ]
       </div>
-      
+       
+    <div class="col-md-6">
+      <div class="form-group">
+        <div class="form-control">
+          <div class="field">
+            <%= f.label :Ingredients %>
+          <h3 id="ingredients">Ingredients:</h3>
+            <%= f.fields_for :ingredients do |ingredient| %>
+            
+             <%= render 'ingredient_fields', :if => ingredient %>
+            
+        </div>
+      </div>
+   
+      <% end %>
+      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+          </div>
+        </div>
+        <%= f.submit 'Save', class: 'btn btn-primary' %>
+        <% end %>
       </div>
     </div>
-  </div>
+   </div>
+ </div>
+
+
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-12">-->
+<!--      <div class="form-group">-->
+<!--        <%= form_for @recipe do |f| %>-->
+<!--        <div class="field">-->
+<!--          <%= f.label :name %><br/>-->
+<!--          <%= f.text_field :name, class: 'form-control' %>-->
+          
+<!--           <div class="field">-->
+<!--            <%= f.label :directions %><br/>-->
+<!--            <%= f.text_area :directions, rows: 6, class: 'form-control'%>-->
+<!--          </div>-->
   
-</div>
+<!--          <h3>Ingredients</h3>-->
+<!--          <div id='ingredients'>-->
+<!--            <%= f.fields_for :ingredients do |ingredient| %>-->
+<!--              <%= render 'ingredient_fields', :f => ingredient %>-->
+<!--            <% end %>-->
+<!--            <div class='links'>-->
+<!--              <%= link_to_add_association 'add ingredient', f, :ingredients %>-->
+<!--            </div>-->
+<!--          </div>-->
+          
+<!--          <%= f.submit 'Save', class: 'btn btn-primary' %>-->
+<!--        <% end %>-->
+<!--        </div>-->
+        
+<!--        <div class="col-md-10 col-md-offset-4 text-center">-->
+<!--        [ <%= link_to 'Cancel and Return to Recipes Listing', recipes_path %> ]-->
+<!--      </div>-->
+      
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  
+<!--</div>-->
 
   
  

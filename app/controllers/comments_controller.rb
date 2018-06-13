@@ -24,3 +24,5 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:description)
   end
 end
+
+

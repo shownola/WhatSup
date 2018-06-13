@@ -77,11 +77,11 @@
 <% end %>
 
 
-<div class="container comments-container">
+<div class="container">
     <% if @recipe.comments != 0 %>
       <div class="row">
         
-        <div class="col-md-12 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-4">
           <h3>Prior Comments:</h3>
           <div id="messages">
             <%= render partial: 'comments/comments', object: @comments %>
@@ -89,6 +89,7 @@
         </div>
       </div>
     <% else %>
+    <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <h3>No Comments Yet!</h3>
       </div>
