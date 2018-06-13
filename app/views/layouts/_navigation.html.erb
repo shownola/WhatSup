@@ -7,22 +7,22 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link"><%= link_to 'Recipes', recipes_path, class: "py-2 d-none d-md-inline-block" %><span class="sr-only">(current)</span></a>
+              <a class="nav-link"><%= link_to 'Recipes', recipes_path, class: "" %><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"> <%= link_to 'Create Recipe', new_recipe_path, class: "py-2 d-none d-md-inline-block" %></a>
+              <a class="nav-link"> <%= link_to 'Create Recipe', new_recipe_path, class: "" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"><%= link_to 'Chefs', chefs_path, class: "py-2 d-none d-md-inline-block" %></a>
+              <a class="nav-link"><%= link_to 'Chefs', chefs_path, class: "k" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"> <%= link_to 'Ingredients', ingredients_path, class: "py-2 d-none d-md-inline-block" %></a>
+              <a class="nav-link"> <%= link_to 'Ingredients', ingredients_path, class: "" %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"> <%= link_to 'New Ingredient', new_ingredient_path, class: "py-2 d-none d-md-inline-block" %></a>
+              <a class="nav-link"> <%= link_to 'New Ingredient', new_ingredient_path, class: "" %></a>
             </li>
             <% if logged_in? %>
-              <li class="nav-item"><a class='nav-link'><%= link_to 'Chatroom', chat_path, class: 'py-2 d-none d-md-inline-block' %></a></li>
+              <li class="nav-item"><a class='nav-link'><%= link_to 'Chatroom', chat_path, class: '' %></a></li>
             <% end %>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
